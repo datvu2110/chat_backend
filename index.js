@@ -19,7 +19,7 @@ const server = http.createServer(app)
 const SocketServer = require('./socket')
 SocketServer(server)
 
-server.listen(port, () => {
+server.listen(process.env.PORT, () => {
     console.log(`Server listening on port ${port}`);
 })
 
