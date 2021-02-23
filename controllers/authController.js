@@ -30,6 +30,7 @@ exports.login = async (req, res) => {
         return res.send(userWithToken)
 
     } catch (e) {
+        console.log(e)
         return res.status(500).json({ message: e.message })
     }
 }
