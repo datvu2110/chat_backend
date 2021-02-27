@@ -6,7 +6,7 @@ const cors = require('cors')
 const app = express()
 const http = require('http')
 
-NODE_TLS_REJECT_UNAUTHORIZED='0'
+process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
