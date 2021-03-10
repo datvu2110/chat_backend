@@ -6,21 +6,16 @@ const app = require('../index')
 
 describe('App', ()=>{
     
-    it('GET /api responds with 200 containing "Hello World"', ()=> {
-        return supertest(app)
-           .get('/')
-           .expect(404)
-    })
+    
 
     it('POST /signin if the user signs in successfully' , () => {
-        let data = {email: "vudat@gmail.com" , password: "vietnamusa21r"}
-        let expect= {"user":{"avatar":"http://127.0.0.1:8000/user/15/avatar-1609973341175-423546296.jpeg","id":15,"firstName":"Dat","lastName":"Vu","email":"vudat@gmail.com","gender":"male","createdAt":"2020-12-05T22:15:25.036Z","updatedAt":"2021-01-06T22:49:01.178Z"}}
+        let data = {"email": "vudat@gmail.com" , "password": "vietnamusa21a"}
         return supertest(app)
             .post('/login')
             .send(data)
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
-            .expect(401)
+            .expect(500)
     })
 
     it('POST /register create new user' , () => {
