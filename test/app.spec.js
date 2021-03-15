@@ -45,7 +45,7 @@ describe('App', ()=>{
             
         }
         return supertest(app)
-            .post('/register')
+            .post('/update')
             .send(data)
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
